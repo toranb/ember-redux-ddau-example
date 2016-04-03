@@ -20,6 +20,19 @@
     <script src="assets/vendor.js"></script>
     <script src="assets/example.js"></script>
 
+    <script>
+      $.fauxjax.new({
+        request: {url: "/api/users", method: "GET"},
+          response: {
+              status: 200,
+              content: [{id: 1, name: 'Toran'}, {id: 2, name: 'Jarrod'}, {id: 3, name: 'Brandon'}]
+          }
+      });
+      $.fauxjax.new({ request: {url: "/api/users/1", method: "DELETE"}, response: { status: 204, content: {} } });
+      $.fauxjax.new({ request: {url: "/api/users/2", method: "DELETE"}, response: { status: 204, content: {} } });
+      $.fauxjax.new({ request: {url: "/api/users/3", method: "DELETE"}, response: { status: 204, content: {} } });
+    </script>
+
     {{content-for "body-footer"}}
   </body>
 </html>
