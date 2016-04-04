@@ -1,1 +1,3 @@
-{{users-list}}
+{{#users-list as |users remove|}}
+  {{users-table users=users remove=remove}}
+{{/users-list}}

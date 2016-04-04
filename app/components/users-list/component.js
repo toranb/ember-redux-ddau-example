@@ -17,7 +17,7 @@ var dispatchToActions = (dispatch) => {
 
 var UserListComponent = Ember.Component.extend({
   layout: hbs`
-    {{users-table users=users remove=(action "remove")}}
+    {{yield users (action "remove")}}
   `
 });
 
