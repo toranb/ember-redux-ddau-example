@@ -25,3 +25,14 @@ test('should render custom component with specified markup', function(assert) {
     var dynamicHeader = this.$('h2');
     assert.equal(dynamicHeader.length, 1);
 });
+
+test('htmlbars will blow up when component is not available', function(assert) {
+    this.registry.register('template:components/foo-bar', hbs`<h2>{{user.name}}</h2>`);
+    assert.expect(1);
+    this.set('custom', 'wat-hat');
+    try {
+        this.render(hbs`{{user-defined users=users custom=custom}}`);
+    } catch(e) {
+        assert.ok(e.message.indexOf('Could not find component') > -1);
+    }
+});
