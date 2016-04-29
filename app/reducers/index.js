@@ -1,5 +1,7 @@
 import users from 'example/reducers/users';
+import router from 'example/reducers/router';
 
 export default {
-    users: users
+    users: users,
+    router: router
 };
