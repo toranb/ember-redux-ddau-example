@@ -4,7 +4,7 @@ const initialState = {
 
 export default ((state, action) => {
     if (action.type === '@@router/LOCATION_CHANGE') {
-        return { ...state, location: action.location };
+        return { ...state, location: action.location }; // jshint ignore:line
     }
     return state || initialState;
 });

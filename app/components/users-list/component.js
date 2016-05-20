@@ -11,13 +11,14 @@ var stateToComputed = (state) => {
 
 var dispatchToActions = (dispatch) => {
   return {
-    remove: (id) => ajax(`/api/users/${id}`, 'DELETE').then(() => dispatch({type: 'REMOVE_USER', id: id}))
+    remove: (id) => ajax(`/api/users/${id}`, 'DELETE').then(() => dispatch({type: 'REMOVE_USER', id: id})),
+    update: (name) => dispatch({type: 'UPDATE_USERNAME', name: name})
   };
 };
 
 var UserListComponent = Ember.Component.extend({
   layout: hbs`
-    {{yield users (action "remove")}}
+    {{yield users (action "update")}}
   `
 });
 

@@ -5,7 +5,7 @@ var UserTableComponent = Ember.Component.extend({
   layout: hbs`
     {{#each users as |user|}}
       <div>{{user.name}}</div>
-      <button onclick={{action remove user.id}}>remove</button>
+      <input id="name" class="form-control detail-name" placeholder="name" value={{user.name}} oninput={{action update value="target.value"}} />
     {{/each}}
   `
 });
