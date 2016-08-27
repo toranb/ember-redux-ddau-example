@@ -40,6 +40,8 @@
     "ember-browserify": "^1.1.8",
     "loader.js": "^4.0.1",
     "redux": "^3.4.0",
-    "redux-thunk": "^2.0.1"
+    "redux-thunk": "^2.0.1",
+    "ember-devtools": "4.4.5",
+    "ember-cli-hot-loader": "0.0.1"
   }
 }
